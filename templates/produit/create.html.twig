@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits{% endblock %}
+
+{% block body %}
+
+    <h1 class="mb-5">Créer un produit</h1>
+
+    {{ form_start(produitForm) }}
+
+        <div class="row">
+            <div class="col-4 offset-2">
+                {{ form_row(produitForm.title) }}
+            </div>
+            <div class="col-4">
+                {{ form_row(produitForm.price) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 offset-2">
+                {{ form_row(produitForm.city) }}
+            </div>
+            <div class="col-4">
+                {{ form_row(produitForm.postal_code) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8 offset-2">
+                {{ form_row(produitForm.description) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-8 offset-2 my-3 text-end">
+                <a href="{{ path('app_produit') }}" class="btn btn-outline-danger me-3">Annuler</a>
+                <button class="btn btn-success">Créer</button>
+            </div>
+        </div>
+
+    {{ form_end(produitForm) }}
+
+{% endblock %}
